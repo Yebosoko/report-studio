@@ -13,7 +13,9 @@ export const env = {
   siteUrl: originOf(process.env.NEXT_PUBLIC_SITE_URL) || "http://localhost:3000",
   sessionSecret: process.env.SESSION_SECRET || "",
   allowLocalInProduction: process.env.ALLOW_LOCAL_MODE === "1",
-  googleSignIn: process.env.ENABLE_GOOGLE_SIGNIN === "1"
+  googleSignIn: process.env.ENABLE_GOOGLE_SIGNIN === "1",
+  // Public contact address shown on the legal pages and footer (optional).
+  contactEmail: clean(process.env.CONTACT_EMAIL)
 };
 export const useSupabase = !!(env.supabaseUrl && env.supabaseAnonKey);
 export function assertConfigured() {

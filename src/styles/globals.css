@@ -65,3 +65,9 @@
   .badge { @apply inline-flex items-center rounded px-1.5 py-0.5 text-label-micro uppercase; }
   .tabular { font-variant-numeric: tabular-nums; }
 }
+
+/* Legal pages */
+.legal ul { list-style: disc; padding-left: 1.25rem; display: grid; gap: .35rem; }
+.legal strong { color: rgb(var(--c-on-surface)); font-weight: 600; }
+.legal a { color: rgb(var(--c-primary)); font-weight: 600; }
+.legal a:hover { text-decoration: underline; }
