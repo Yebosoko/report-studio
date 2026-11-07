@@ -5,7 +5,9 @@ import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 
 export async function middleware(request: NextRequest) {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL, key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const raw = (process.env.NEXT_PUBLIC_SUPABASE_URL || "").trim(); let url = raw;
+  try { if (raw) url = new URL(raw).origin; } catch {}
+  const key = (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "").trim();
   let response = NextResponse.next({ request });
   const p = request.nextUrl.pathname;
   const adminPath = p === "/admin" || p.startsWith("/admin/") || p.startsWith("/api/admin");

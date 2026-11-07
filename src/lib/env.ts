@@ -1,12 +1,16 @@
-/* Environment. Supabase is used when its URL and anon key are set; otherwise the app runs on the local file store. */
+/* Environment. Supabase is used when its URL and anon key are set; otherwise the app runs on the local file store.
+   Values are tidied because they're pasted by hand: spaces and quotes are trimmed, and the Supabase URL is cut back
+   to its origin (https://<ref>.supabase.co) if a path such as /rest/v1/ was copied with it. */
+const clean = (v?: string) => (v || "").trim().replace(/^["']|["']$/g, "").trim();
+export function originOf(v?: string) { const c = clean(v); if (!c) return ""; try { return new URL(c).origin; } catch { return c.replace(/\/+$/, ""); } }
 export const env = {
-  supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL || "",
-  supabaseAnonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "",
-  supabaseServiceKey: process.env.SUPABASE_SERVICE_ROLE_KEY || "",
+  supabaseUrl: originOf(process.env.NEXT_PUBLIC_SUPABASE_URL),
+  supabaseAnonKey: clean(process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
+  supabaseServiceKey: clean(process.env.SUPABASE_SERVICE_ROLE_KEY),
   ownerEmail: (process.env.OWNER_EMAIL || "").trim().toLowerCase(),
-  anthropicKey: process.env.ANTHROPIC_API_KEY || "",
+  anthropicKey: clean(process.env.ANTHROPIC_API_KEY),
   aiMock: process.env.AI_MOCK === "1",
-  siteUrl: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
+  siteUrl: originOf(process.env.NEXT_PUBLIC_SITE_URL) || "http://localhost:3000",
   sessionSecret: process.env.SESSION_SECRET || "",
   allowLocalInProduction: process.env.ALLOW_LOCAL_MODE === "1",
   googleSignIn: process.env.ENABLE_GOOGLE_SIGNIN === "1"
