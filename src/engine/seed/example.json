@@ -1,0 +1,289 @@
+{
+ "templateId": "monitor",
+ "theme": "mangrove",
+ "cover": "frame",
+ "font": "institutional",
+ "style": {
+  "chapter": "number",
+  "table": "solid",
+  "stat": "tint",
+  "callout": "tint"
+ },
+ "meta": {
+  "title": "Quarterly E&S Monitoring Report, Q3 2026",
+  "subtitle": "Example project: Rural Access Roads Rehabilitation, Lot 2 (illustrative figures)",
+  "docType": "Environmental and Social Monitoring Report",
+  "client": "Example State Roads Agency",
+  "preparedBy": "Your consultancy name",
+  "date": "October 2026",
+  "version": "Draft v1.0",
+  "abbr": "E&S"
+ },
+ "sections": [
+  {
+   "title": "Highlights",
+   "blocks": [
+    {
+     "t": "stats",
+     "items": [
+      {
+       "value": "86%",
+       "label": "ESMP measures fully implemented"
+      },
+      {
+       "value": "0",
+       "label": "lost-time injuries this quarter"
+      },
+      {
+       "value": "14",
+       "label": "grievances received, 11 closed"
+      },
+      {
+       "value": "412",
+       "label": "workers on site, 31% from host communities"
+      }
+     ]
+    },
+    {
+     "t": "callout",
+     "title": "Key message",
+     "text": "Compliance improved from 74% to 86% this quarter. Dust control on the Km 12 to Km 18 stretch and late payment of two compensation cases remain the priority issues for Q4."
+    },
+    {
+     "t": "p",
+     "text": "This report covers environmental and social performance for July to September 2026. Civil works advanced on three of the four road sections, with **no lost-time injuries** and a sharp rise in toolbox talk attendance."
+    }
+   ]
+  },
+  {
+   "title": "Project Progress",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Physical progress reached 58% against a plan of 62%. Rain in August delayed earthworks on Section C."
+    },
+    {
+     "t": "chart",
+     "kind": "column",
+     "title": "Road length completed by month",
+     "unit": "km",
+     "labels": [
+      "Jul",
+      "Aug",
+      "Sep"
+     ],
+     "series": [
+      {
+       "name": "Planned",
+       "values": [
+        4.5,
+        5.0,
+        5.5
+       ]
+      },
+      {
+       "name": "Achieved",
+       "values": [
+        4.2,
+        3.6,
+        5.8
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "ESMP Compliance Status",
+   "blocks": [
+    {
+     "t": "table",
+     "caption": "Status of key ESMP requirements",
+     "head": [
+      "Requirement",
+      "Status",
+      "Comment"
+     ],
+     "rating": 1,
+     "rows": [
+      [
+       "Dust suppression on haul roads",
+       "Partial",
+       "Water bowser available, but watering below the twice-daily target on Km 12 to 18"
+      ],
+      [
+       "Waste segregation at camp",
+       "Compliant",
+       "Colour-coded bins in place; licensed collector engaged"
+      ],
+      [
+       "Borrow pit restoration",
+       "Compliant",
+       "Two pits reshaped and topsoil replaced"
+      ],
+      [
+       "Workers' code of conduct signed",
+       "Compliant",
+       "All 412 workers signed; induction records complete"
+      ],
+      [
+       "Compensation before access to land",
+       "Non-compliant",
+       "Two households awaiting payment; works paused on affected plots"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Occupational Health and Safety",
+   "blocks": [
+    {
+     "t": "chart",
+     "kind": "line",
+     "title": "Toolbox talk attendance",
+     "unit": "workers",
+     "labels": [
+      "Jul",
+      "Aug",
+      "Sep"
+     ],
+     "series": [
+      {
+       "name": "Attendance",
+       "values": [
+        268,
+        331,
+        389
+       ]
+      }
+     ]
+    },
+    {
+     "t": "bullets",
+     "items": [
+      "Near misses reported: 9 (up from 4), reflecting better reporting culture",
+      "PPE compliance in spot checks: 94%",
+      "First-aid cases: 6, all minor cuts and sprains"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Stakeholder Engagement",
+   "blocks": [
+    {
+     "t": "p",
+     "text": "Eleven community meetings were held, including two women-only sessions in the market towns along Section B."
+    },
+    {
+     "t": "quote",
+     "text": "The new drainage has kept water out of the market for the first time this rainy season.",
+     "by": "Market women's association representative, September meeting"
+    },
+    {
+     "t": "image",
+     "caption": "Suggested photo: community meeting at the Section B market"
+    }
+   ]
+  },
+  {
+   "title": "Grievance Management",
+   "blocks": [
+    {
+     "t": "steps",
+     "title": "How grievances are handled",
+     "items": [
+      {
+       "title": "Receive and log",
+       "text": "Through community liaison officers, the hotline or suggestion boxes"
+      },
+      {
+       "title": "Acknowledge",
+       "text": "Within 3 working days"
+      },
+      {
+       "title": "Investigate",
+       "text": "Site visit and discussion with the complainant"
+      },
+      {
+       "title": "Resolve and close",
+       "text": "Within 21 days, with complainant sign-off"
+      }
+     ]
+    },
+    {
+     "t": "chart",
+     "kind": "doughnut",
+     "title": "Grievances by category",
+     "labels": [
+      "Dust and noise",
+      "Compensation",
+      "Employment",
+      "Access"
+     ],
+     "series": [
+      {
+       "name": "Grievances",
+       "values": [
+        6,
+        3,
+        3,
+        2
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Corrective Action Plan",
+   "blocks": [
+    {
+     "t": "table",
+     "caption": "Open and closed corrective actions",
+     "head": [
+      "Action",
+      "Owner",
+      "Deadline",
+      "Status"
+     ],
+     "rating": 3,
+     "rows": [
+      [
+       "Increase watering to twice daily on Km 12 to 18",
+       "Contractor E&S officer",
+       "15 Oct 2026",
+       "Open"
+      ],
+      [
+       "Pay outstanding compensation to two households",
+       "Roads agency PIU",
+       "31 Oct 2026",
+       "Overdue"
+      ],
+      [
+       "Install speed signs near two schools",
+       "Contractor",
+       "30 Sep 2026",
+       "Closed"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Outlook for Next Period",
+   "blocks": [
+    {
+     "t": "bullets",
+     "items": [
+      "Complete Section C earthworks before the dry season ends",
+      "Close the two compensation cases before works resume on affected plots",
+      "Run refresher training on traffic management near schools"
+     ]
+    }
+   ]
+  }
+ ]
+}

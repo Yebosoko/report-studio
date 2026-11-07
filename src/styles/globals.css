@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colour tokens as RGB triplets (Stitch DESIGN.md "Institutional Safeguards Desk"); dark values derived to match. */
+:root {
+  --c-background: 240 252 246; --c-surface: 240 252 246; --c-scl: 255 255 255; --c-sc-low: 234 247 240;
+  --c-sc: 228 241 234; --c-sc-high: 222 235 229; --c-sc-highest: 217 229 223;
+  --c-on-surface: 19 30 26; --c-on-surface-variant: 63 73 70; --c-outline: 111 121 118; --c-outline-variant: 190 201 197;
+  --c-primary: 0 69 59; --c-on-primary: 255 255 255; --c-primary-container: 15 94 82; --c-on-primary-container: 143 213 197;
+  --c-secondary: 130 85 0; --c-secondary-container: 255 189 95; --c-on-secondary-container: 117 76 0; --c-secondary-fixed: 255 221 180;
+  --c-tertiary: 0 70 43; --c-tertiary-fixed: 164 244 197;
+  --c-error: 186 26 26; --c-error-container: 255 218 214; --c-on-error-container: 147 0 10;
+  --c-desk: 217 229 223;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-background: 14 21 18; --c-surface: 14 21 18; --c-scl: 22 30 27; --c-sc-low: 26 35 31;
+    --c-sc: 30 40 36; --c-sc-high: 37 48 43; --c-sc-highest: 44 56 51;
+    --c-on-surface: 222 235 229; --c-on-surface-variant: 190 201 197; --c-outline: 137 147 144; --c-outline-variant: 63 73 70;
+    --c-primary: 142 212 196; --c-on-primary: 0 32 27; --c-primary-container: 0 80 69; --c-on-primary-container: 170 240 224;
+    --c-secondary: 252 186 92; --c-secondary-container: 99 63 0; --c-on-secondary-container: 255 221 180; --c-secondary-fixed: 99 63 0;
+    --c-tertiary: 136 215 170; --c-tertiary-fixed: 0 82 51;
+    --c-error: 255 180 171; --c-error-container: 147 0 10; --c-on-error-container: 255 218 214;
+    --c-desk: 10 15 13;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --c-background: 14 21 18; --c-surface: 14 21 18; --c-scl: 22 30 27; --c-sc-low: 26 35 31;
+  --c-sc: 30 40 36; --c-sc-high: 37 48 43; --c-sc-highest: 44 56 51;
+  --c-on-surface: 222 235 229; --c-on-surface-variant: 190 201 197; --c-outline: 137 147 144; --c-outline-variant: 63 73 70;
+  --c-primary: 142 212 196; --c-on-primary: 0 32 27; --c-primary-container: 0 80 69; --c-on-primary-container: 170 240 224;
+  --c-secondary: 252 186 92; --c-secondary-container: 99 63 0; --c-on-secondary-container: 255 221 180; --c-secondary-fixed: 99 63 0;
+  --c-tertiary: 136 215 170; --c-tertiary-fixed: 0 82 51;
+  --c-error: 255 180 171; --c-error-container: 147 0 10; --c-on-error-container: 255 218 214;
+  --c-desk: 10 15 13;
+  color-scheme: dark;
+}
+
+@layer base {
+  html, body { background: rgb(var(--c-background)); color: rgb(var(--c-on-surface)); }
+  body { font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 0.9375rem; line-height: 1.5rem; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  :focus-visible { outline: 2px solid rgb(var(--c-primary-container)); outline-offset: 2px; }
+  [hidden] { display: none !important; }
+}
+@layer components {
+  .icon { width: 1em; overflow: hidden; flex-shrink: 0; font-family: "Material Symbols Outlined"; font-weight: normal; font-style: normal; font-size: 20px; line-height: 1; letter-spacing: normal; text-transform: none; display: inline-block; white-space: nowrap; direction: ltr; -webkit-font-feature-settings: "liga"; font-feature-settings: "liga"; font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; user-select: none; }
+  .gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  @media (min-width: 768px) { .gutter { padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); } }
+  @media (min-width: 1200px) { .gutter { padding-left: 2rem; padding-right: 2rem; } }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-outline-variant bg-surface-container-lowest px-4 py-2 text-label-md font-semibold text-on-surface transition-colors hover:border-outline disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply border-primary-container bg-primary-container text-on-primary hover:brightness-110; }
+  .btn-ghost { @apply border-transparent bg-transparent hover:bg-surface-container; }
+  .btn-danger { @apply text-error hover:border-error; }
+  .btn-sm { @apply px-3 py-1.5 text-body-sm; }
+  .card { @apply rounded-xl border border-outline-variant bg-surface-container-lowest; }
+  .field { @apply w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 text-body-md text-on-surface placeholder:text-outline focus:border-primary-container focus:outline-none focus:ring-2 focus:ring-primary-container/20; }
+  .label { @apply mb-1 block text-label-md text-on-surface-variant; }
+  .micro { @apply text-label-micro uppercase text-on-surface-variant; }
+  .chip { @apply inline-flex items-center gap-1 rounded-full border border-outline-variant bg-surface-container-lowest px-3 py-1 text-body-sm font-semibold text-on-surface-variant; }
+  .chip[aria-pressed="true"] { @apply border-on-surface bg-on-surface text-surface-container-lowest; }
+  .badge { @apply inline-flex items-center rounded px-1.5 py-0.5 text-label-micro uppercase; }
+  .tabular { font-variant-numeric: tabular-nums; }
+}
